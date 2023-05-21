@@ -1,3 +1,12 @@
+@import url(./font.css);
+
+:root {
+    --black: #000;
+    --white: #fff;
+    --R-R: "Roboto-Regular";
+    --R-B: "Roboto-Bold";
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -40,35 +49,41 @@
     flex-direction: column;
     gap: 5px;
     border: none;
-  }
-  
-  .burger_menu {
+}
+
+.burger_menu {
     display: none;
-  
-  }
-  
-  .burger_menu>div {
+
+}
+
+.burger_menu>div {
     width: 20px;
     height: 2px;
-    background-color:#322E41;
-  }
+    background-color: #322E41;
+}
 
 .menu_item {
     padding: 23px 14px;
+    cursor: pointer;
 }
-.menu_item:hover{
+
+.menu_item:hover {
     background-color: #fff;
 }
-.menu_link {
-    color: #fff;
-}
-.menu_link:hover{
+
+.menu_item:hover .menu_link {
     color: #D47300;
 }
+
+.menu_link {
+    color: #fff;
+    font-family: var(--R-R);
+}
+
 .header_content {
     width: 100%;
     height: 500px;
-    background-image: url(../img/nike2\ 1.png);
+    background-image: url(../img/nike.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -83,15 +98,15 @@
 }
 
 .header_content-title {
-    font-weight: 700;
     font-size: 50px;
     line-height: 59px;
+    font-family: var(--R-B);
 }
 
 .header_content-text {
-    font-weight: 400;
     font-size: 18px;
     line-height: 21px;
+    font-family: var(--R-R);
 }
 
 /* MAIN SECTIONS STYLES */
@@ -113,7 +128,8 @@
     grid-column: span 2;
     text-align: left !important;
 }
-.nike{
+
+.nike {
     max-width: 510px;
     width: 100%;
 }
@@ -141,7 +157,7 @@
 }
 
 .card_title {
-    font-weight: 700;
+    font-family: var(--R-B);
     font-size: 22px;
     line-height: 26px;
     color: #2c2a2a;
@@ -149,7 +165,7 @@
 }
 
 .card_text {
-    font-weight: 400;
+    font-family: var(--R-R);
     font-size: 16px;
     line-height: 19px;
     color: #9b9b9b;
@@ -172,16 +188,19 @@
     flex-direction: column;
     gap: 10px;
 }
-.footer_item{
+
+.footer_item {
     display: flex;
     gap: 163px;
 }
-.all{
+
+.all {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 163px;
 }
+
 .footer_list-links {
     color: #fff;
 }
@@ -229,85 +248,115 @@
     height: 25px;
     background: #544294;
     color: #fff;
+    font-family: var(--R-R);
 }
-.submit_btn:hover{
-background-color: #fff;
-color: #544294;
+
+.submit_btn:hover {
+    background-color: #fff;
+    color: #544294;
 }
+
 .footer_list-links,
 .submit_btn,
-.menu_link{
-    transition: 0.5s;
+.menu_link {
+    transition: 0.2s;
+    font-family: var(--R-R);
 }
-.footer_list-links:hover{
-color: #D47300;
+
+.footer_list-links:hover {
+    color: #D47300;
 }
-.social_links{
+
+.social_links {
     display: flex;
     gap: 40px;
 }
-@media(max-width:1135px){
-    .header_top{
+
+@media(max-width:1135px) {
+    .header_top {
         display: flex;
         justify-content: space-around;
     }
-    .footer_content{
+
+    .footer_content {
         display: flex;
         justify-content: space-around;
     }
-    .page_footer{
+
+    .page_footer {
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    .main_content-wrapper{
+
+    .main_content-wrapper {
         margin: 0 auto;
-        display: flex;
-        flex-direction: column;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
         max-width: 540px;
     }
-    .all{
+
+    .all {
         display: flex;
         gap: 60px;
     }
 }
-@media(max-width:890px){
-    .footer_content{
+
+@media(max-width:890px) {
+    .footer_content {
         display: flex;
         flex-direction: column;
     }
-    .all{
+
+    .all {
         margin-top: 80px;
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    .header_menu{
-        display:none;
+
+    .header_menu {
+        display: none;
     }
+
     .burger_menu {
         display: flex;
-      }
-      .header_top{
+    }
+
+    .header_top {
         padding: 11px;
-      }
+    }
 }
-@media(max-width:570px){
-    .page_footer{
+
+@media(max-width:570px) {
+    .page_footer {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
-    .all{
+
+    .all {
         display: flex;
         flex-direction: column;
     }
+
+    .main_content-wrapper {
+        grid-template-columns: repeat(2, 0.5fr);
+        grid-template-rows: repeat(3, 0.5fr)
+    }
 }
-@media(max-width:380px){
+
+@media(max-width:380px) {
+
     .name_input,
     .message_input,
-    .submit_btn{
+    .submit_btn {
         width: 300px;
+    }
+
+    .main_content-wrapper {
+        display: flex;
+        flex-direction: column;
     }
 }
